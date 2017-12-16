@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EB29E6F1FE06D6D00C0F662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB29E6E1FE06D6D00C0F662 /* AppDelegate.swift */; };
-		0EB29E711FE06D6D00C0F662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB29E701FE06D6D00C0F662 /* ViewController.swift */; };
+		0EB29E711FE06D6D00C0F662 /* FaceDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB29E701FE06D6D00C0F662 /* FaceDetectionViewController.swift */; };
 		0EB29E741FE06D6D00C0F662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB29E721FE06D6D00C0F662 /* Main.storyboard */; };
 		0EB29E761FE06D6D00C0F662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB29E751FE06D6D00C0F662 /* Assets.xcassets */; };
 		0EB29E791FE06D6D00C0F662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB29E771FE06D6D00C0F662 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		0EB29E6B1FE06D6D00C0F662 /* ARFaceDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFaceDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB29E6E1FE06D6D00C0F662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EB29E701FE06D6D00C0F662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EB29E701FE06D6D00C0F662 /* FaceDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionViewController.swift; sourceTree = "<group>"; };
 		0EB29E731FE06D6D00C0F662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EB29E751FE06D6D00C0F662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB29E781FE06D6D00C0F662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB29E6E1FE06D6D00C0F662 /* AppDelegate.swift */,
-				0EB29E701FE06D6D00C0F662 /* ViewController.swift */,
+				0EB29E701FE06D6D00C0F662 /* FaceDetectionViewController.swift */,
 				0EB29E721FE06D6D00C0F662 /* Main.storyboard */,
 				0EB29E751FE06D6D00C0F662 /* Assets.xcassets */,
 				0EB29E771FE06D6D00C0F662 /* LaunchScreen.storyboard */,
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EB29E711FE06D6D00C0F662 /* ViewController.swift in Sources */,
+				0EB29E711FE06D6D00C0F662 /* FaceDetectionViewController.swift in Sources */,
 				0EB29E6F1FE06D6D00C0F662 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,11 +277,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9CF5Y5SBGU;
 				INFOPLIST_FILE = ARFaceDetection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanniki.ARFaceDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,11 +293,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9CF5Y5SBGU;
 				INFOPLIST_FILE = ARFaceDetection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanniki.ARFaceDetection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
