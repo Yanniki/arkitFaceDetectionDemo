@@ -43,7 +43,7 @@ class FaceDetectionViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         sceneView.session.run(configuration)
         
-        //8 scan for faces in regular intervals
+        //scan for faces in regular intervals
         scanTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(scanForFaces), userInfo: nil, repeats: true)
     }
     
@@ -57,21 +57,19 @@ class FaceDetectionViewController: UIViewController {
     @objc
     private func scanForFaces() {
         
-        //6 remove the test views and empty the array that was keeping a reference to them
+        //remove the test views and empty the array that was keeping a reference to them
         _ = scannedFaceViews.map { $0.removeFromSuperview() }
         scannedFaceViews.removeAll()
         
-        //1 get the captured image of the ARSession's current frame 
+        //get the captured image of the ARSession's current frame
         guard let capturedImage = sceneView.session.currentFrame?.capturedImage else { return }
         
-        //2 create a CIImage
         let image = CIImage.init(cvPixelBuffer: capturedImage)
         
-        //3 create VNDetectFaceRectanglesRequest
         let detectFaceRequest = VNDetectFaceRectanglesRequest { (request, error) in
             
             DispatchQueue.main.async {
-                //5 Loop through the resulting faces and add a red UIView on top of them.
+                //Loop through the resulting faces and add a red UIView on top of them.
                 if let faces = request.results as? [VNFaceObservation] {
                     for face in faces {
                         let faceView = UIView(frame: self.faceFrame(from: face.boundingBox))
@@ -86,7 +84,6 @@ class FaceDetectionViewController: UIViewController {
             }
         }
         
-        //4 ask a VNImageRequestHandler to perform the VNDetectFaceRectanglesRequest
         DispatchQueue.global().async {
             try? VNImageRequestHandler(ciImage: image, orientation: self.imageOrientation).perform([detectFaceRequest])
         }
@@ -94,7 +91,7 @@ class FaceDetectionViewController: UIViewController {
     
     private func faceFrame(from boundingBox: CGRect) -> CGRect {
         
-        //7 translate camera frame to frame inside the ARSKView
+        //translate camera frame to frame inside the ARSKView
         let origin = CGPoint(x: boundingBox.minX * sceneView.bounds.width, y: (1 - boundingBox.maxY) * sceneView.bounds.height)
         let size = CGSize(width: boundingBox.width * sceneView.bounds.width, height: boundingBox.height * sceneView.bounds.height)
         
