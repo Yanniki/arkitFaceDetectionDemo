@@ -43,7 +43,7 @@ class FaceDetectionViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         sceneView.session.run(configuration)
         
-        //7 scan for faces in regular intervals
+        //8 scan for faces in regular intervals
         scanTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(scanForFaces), userInfo: nil, repeats: true)
     }
     
@@ -57,7 +57,7 @@ class FaceDetectionViewController: UIViewController {
     @objc
     private func scanForFaces() {
         
-        //8 remove the test views and empty the array that was keeping a reference to them
+        //6 remove the test views and empty the array that was keeping a reference to them
         _ = scannedFaceViews.map { $0.removeFromSuperview() }
         scannedFaceViews.removeAll()
         
@@ -94,7 +94,7 @@ class FaceDetectionViewController: UIViewController {
     
     private func faceFrame(from boundingBox: CGRect) -> CGRect {
         
-        //6 translate camera frame to frame inside the ARSKView
+        //7 translate camera frame to frame inside the ARSKView
         let origin = CGPoint(x: boundingBox.minX * sceneView.bounds.width, y: (1 - boundingBox.maxY) * sceneView.bounds.height)
         let size = CGSize(width: boundingBox.width * sceneView.bounds.width, height: boundingBox.height * sceneView.bounds.height)
         
